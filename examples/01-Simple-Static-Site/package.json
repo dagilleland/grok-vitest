@@ -8,7 +8,7 @@
     "preview": "vite preview"
   },
   "keywords": [],
-  "author": "",
+  "author": "Dan Gilleland",
   "license": "ISC",
   "devDependencies": {
     "vite": "^2.9.12"
