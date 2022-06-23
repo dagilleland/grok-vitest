@@ -3,7 +3,7 @@ export function footerDefault() {
     let foot = document.querySelector('body > footer');
     if(foot === undefined || foot === null) {
         foot = document.createElement('footer');
-        document.appendChild(foot);
+        document.body.appendChild(foot);
         foot = document.querySelector('body > footer');
     }
     if(foot.childNodes.length === 0) {
