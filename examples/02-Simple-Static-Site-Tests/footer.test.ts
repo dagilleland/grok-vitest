@@ -40,7 +40,6 @@ describe('footer content', () => {
     })
 
     it('should generate footer content', () => {
-        // So, if all the above is passing, why can't my JavaScript module add to the document?
         footerDefault();
         expect(document.querySelector('footer')).toBeDefined();
     })
