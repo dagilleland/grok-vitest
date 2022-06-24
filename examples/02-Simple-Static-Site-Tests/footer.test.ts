@@ -11,7 +11,7 @@ it('should work', (ctx) => {
 
 describe('footer content', () => {
     beforeEach(() => {
-        global.document = document;
+        document.body.innerHTML = '';
     })
 
     it('should have a document object by default because of the comment block at the top of this test file', () => {
@@ -41,6 +41,16 @@ describe('footer content', () => {
 
     it('should generate footer content', () => {
         footerDefault();
-        expect(document.querySelector('footer')).toBeDefined();
+        let actual = document.querySelector('footer');
+        expect(actual).toBeDefined();
+        expect(actual?.textContent).toBe('@copy; 2022 by Dan Gilleland');
+    })
+
+    it('should not replace existing footer content', () => {
+        let existing = '<footer>Keep it simple</footer>';
+        document.body.innerHTML += existing;
+        footerDefault();
+        let actual = document.querySelector('footer');
+        expect(actual?.textContent).toBe('Keep it simple');
     })
 })
